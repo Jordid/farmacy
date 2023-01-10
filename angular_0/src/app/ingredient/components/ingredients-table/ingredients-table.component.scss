@@ -1,0 +1,16 @@
+.table-responsive {
+  font-size: 14px;
+  min-width: 550px;
+}
+.actionsTh {
+  display: flex !important;
+  justify-content: flex-end !important;
+  padding-right: 38px !important;
+}
+.actionsConainer {
+  display: flex;
+  justify-content: flex-end;
+  .deleteButton {
+    margin-left: 4px;
+  }
+}

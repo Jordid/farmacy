@@ -1,0 +1,31 @@
+<div class="row m-0 justify-content-center">
+  <div class="col-10 col-lg-4">
+    <div class="row">
+      <div *ngIf="formSent" class="col-12 pt-4">
+        <div class="alert alert-success">Registered ingredient.</div>
+      </div>
+
+      <div class="col-12 py-2">
+        <h4>Register ingredient</h4>
+
+        <form [formGroup]="form">
+          <formly-form [form]="form" [model]="model" [fields]="fields">
+          </formly-form>
+        </form>
+
+        <div class="mt-4 d-flex justify-content-end">
+          <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+          <button
+            class="btn btn-info saveButton"
+            (click)="createMedicine()"
+            [disabled]="!validatedForm"
+          >
+            Save
+          </button>
+        </div>
+
+        <div class="ingredientsSelectorContainer"></div>
+      </div>
+    </div>
+  </div>
+</div>

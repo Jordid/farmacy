@@ -1,0 +1,17 @@
+.medicinePreview {
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 8px;
+  .keyValueContainer {
+    display: flex;
+    line-height: normal;
+    .key {
+      min-width: 160px;
+      font-weight: bold;
+      padding-right: 8px;
+    }
+    .value{
+      font-size: 15px;
+    }
+  }
+}

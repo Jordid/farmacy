@@ -1,0 +1,14 @@
+.table-responsive {
+  font-size: 14px;
+}
+.actionsConainer {
+  display: flex;
+  justify-content: flex-end;
+  .deleteButton,
+  .addIngredientsButton {
+    margin-left: 4px;
+  }
+}
+.noResults {
+  font-size: 18px;
+}

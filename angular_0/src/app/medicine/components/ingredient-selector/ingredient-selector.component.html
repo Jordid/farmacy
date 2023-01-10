@@ -1,0 +1,20 @@
+<div class="selectorContainer">
+  <span class="title">
+    Ingredients
+  </span>
+  <form [formGroup]="form">
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      formControlName="ingredientID"
+    >
+      <option value="ALL">Todos</option>
+      <ng-container *ngIf="ingredients?.length">
+        <option [value]="ingredient?._id" *ngFor="let ingredient of ingredients">
+          {{ ingredient.name }}
+        </option>
+      </ng-container>
+    </select>
+  </form>
+
+</div>

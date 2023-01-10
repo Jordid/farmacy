@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand navbar-light">
+  <div class="container-fluid">
+    <div
+      class="collapse navbar-collapse flex-wrap justify-content-end align-items-center justify-content-md-center"
+    >
+      <form class="d-flex mt-1">
+        <input
+          class="form-control app-searcher"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-secondary">Search</button>
+      </form>
+      <div class="ingredientsSelectorContainer mt-1">
+        <app-ingredient-selector
+          [ingredients]="ingredients"
+          [addQueryParam]="true"
+        ></app-ingredient-selector>
+      </div>
+      <button
+        class="btn btn-outline-info newMedicineButton mt-1"
+        [routerLink]="['/admin/medicine/create']"
+      >
+        New
+      </button>
+    </div>
+  </div>
+</nav>

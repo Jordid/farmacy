@@ -1,0 +1,19 @@
+.ingredientsSelectorContainer {
+  display: flex;
+  padding-top: 16px;
+  .selectorWrappper {
+    width: calc(100% - 37px);
+  }
+}
+
+.addIngredientButton{
+  margin-left: 1px;
+}
+
+.ingredientContainer {
+  display: flex;
+}
+
+.saveButton {
+  margin-left: 4px;
+}

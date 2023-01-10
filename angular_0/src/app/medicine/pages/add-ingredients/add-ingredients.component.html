@@ -1,0 +1,78 @@
+<div class="row m-0 justify-content-center">
+  <div class="col-10 col-lg-6">
+    <div class="row">
+      <div *ngIf="formSent" class="col-12 pt-4">
+        <div class="alert alert-success">Updated medicine.</div>
+      </div>
+
+      <div class="col-12 py-2">
+        <h4 class="mb-4">Add ingredients</h4>
+
+        <ng-container
+          *ngIf="!gettingIngredients && !gettingMedicine; else spinner"
+        >
+          <div class="mb-4 medicinePreviewContainer">
+            <app-medicine-preview [medicine]="medicine"></app-medicine-preview>
+          </div>
+
+          <div class="ingredientsSelectorContainer mt-1">
+            <div *ngIf="ingredients?.length" class="selectorWrappper">
+              <app-ingredient-selector
+                [ingredients]="ingredients"
+                [addQueryParam]="false"
+                (selectedIngredient)="onIngredientChange($event)"
+              ></app-ingredient-selector>
+            </div>
+            <button
+              class="btn btn-secondary addIngredientButton"
+              (click)="addIngedient()"
+            >
+              +
+            </button>
+          </div>
+
+          <div class="seletedContainer pt-3">
+            <div *ngIf="selecetedIngredients?.length" class="list-group">
+              <div class="fw-bold mb-1">Added ingredients</div>
+
+              <ng-container *ngFor="let ingredient of selecetedIngredients">
+                <div class="ingredientContainer">
+                  <div
+                    class="ingredient list-group-item list-group-item-action"
+                  >
+                    {{ ingredient.name }}
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger btn-sm deleteButton"
+                    (click)="removeIngredient(ingredient._id)"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="mt-4 d-flex justify-content-end">
+            <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+            <button
+              class="btn btn-info saveButton"
+              [disabled]="formSent"
+              (click)="save()"
+            >
+              Save
+            </button>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #spinner>
+  <div class="d-flex justify-content-center py-5">
+    <app-spinner></app-spinner>
+  </div>
+</ng-template>

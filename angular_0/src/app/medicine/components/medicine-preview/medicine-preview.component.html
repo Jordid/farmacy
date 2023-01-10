@@ -1,0 +1,29 @@
+<section *ngIf="medicine?.name" class="medicinePreview">
+  <div class="keyValueContainer">
+    <div class="key">Medicine name:</div>
+    <div class="value">
+      {{ medicine?.name }}
+    </div>
+  </div>
+
+  <div class="keyValueContainer">
+    <div class="key">Posology:</div>
+    <div class="value">
+      {{ medicine?.posology }}
+    </div>
+  </div>
+
+  <div class="keyValueContainer">
+    <div class="key">Expiration date:</div>
+    <div class="value">
+      {{ medicine.expirationDate | date }}
+    </div>
+  </div>
+
+  <div class="keyValueContainer">
+    <div class="key">Stock:</div>
+    <div class="value">
+      {{ medicine.stock }}
+    </div>
+  </div>
+</section>
